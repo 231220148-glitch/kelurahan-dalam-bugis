@@ -1,0 +1,482 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kuis Pecahan SD Set 3</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Lexend:wght@400;500;600&display=swap">
+<style>
+/* Tata letak: satu kolom di atas kertas berpetak seperti buku tulis matematika.
+   Soal dikerjakan satu per satu di dalam kartu putih; pecahan ditulis bersusun
+   (pembilang di atas garis, penyebut di bawah) seperti di buku pelajaran. */
+:root {
+  --bg: #EEF3F8;
+  --grid: #DCE5EF;
+  --surface: #FFFFFF;
+  --ink: #13233B;
+  --ink-2: #4A5B73;
+  --line: #C5D1E0;
+  --accent: #1B4DD6;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E3EBFF;
+  --accent-edge: #0F36A0;
+  --pencil: #F5B400;
+  --on-pencil: #3B2A00;
+  --good: #0B7350;
+  --good-soft: #DDF4EA;
+  --on-good: #FFFFFF;
+  --bad: #B92D24;
+  --bad-soft: #FBE4E1;
+  --on-bad: #FFFFFF;
+  --font-display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
+  --font-body: 'Lexend', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1726;
+    --grid: #16233A;
+    --surface: #162238;
+    --ink: #E8EEF8;
+    --ink-2: #9DB0C9;
+    --line: #2C3D5A;
+    --accent: #7FA2FF;
+    --accent-ink: #0B1530;
+    --accent-soft: #1F3159;
+    --accent-edge: #4B6FD0;
+    --pencil: #F5C542;
+    --on-pencil: #3B2A00;
+    --good: #4FD1A0;
+    --good-soft: #123A2E;
+    --on-good: #0A2A20;
+    --bad: #FF8A80;
+    --bad-soft: #43201F;
+    --on-bad: #3A0F0C;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1726;
+  --grid: #16233A;
+  --surface: #162238;
+  --ink: #E8EEF8;
+  --ink-2: #9DB0C9;
+  --line: #2C3D5A;
+  --accent: #7FA2FF;
+  --accent-ink: #0B1530;
+  --accent-soft: #1F3159;
+  --accent-edge: #4B6FD0;
+  --pencil: #F5C542;
+  --on-pencil: #3B2A00;
+  --good: #4FD1A0;
+  --good-soft: #123A2E;
+  --on-good: #0A2A20;
+  --bad: #FF8A80;
+  --bad-soft: #43201F;
+  --on-bad: #3A0F0C;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  padding-block: 18px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 720px; margin-inline: auto; }
+[tabindex="-1"]:focus { outline: none; }
+
+.bar { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.brand { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+.modeLabel { font-size: .82rem; color: var(--ink-2); font-weight: 500; }
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(18px, 4.5vw, 30px);
+  box-shadow: 0 3px 0 var(--line);
+}
+.eyebrow { margin: 0 0 6px; font-size: .76rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-2); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 7vw, 2.7rem); line-height: 1.1; }
+.lead { margin: 12px 0 0; max-width: 60ch; color: var(--ink-2); }
+
+/* pecahan bersusun */
+.mn { display: inline-flex; align-items: center; gap: .16em; vertical-align: middle; white-space: nowrap; margin: 0 .1em; }
+.mn .w { font-weight: 500; }
+.fr { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.05; font-size: .92em; font-variant-numeric: tabular-nums; }
+.fr .n { padding: 0 .3em .09em; border-bottom: .085em solid currentColor; }
+.fr .d { padding: .09em .3em 0; }
+
+/* layar awal */
+.demo { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; font-family: var(--font-display); font-size: 2.2rem; }
+.strip { display: inline-grid; grid-template-columns: repeat(4, 28px); gap: 3px; }
+.strip i { height: 22px; border: 1.5px solid var(--ink); border-radius: 4px; }
+.strip i.on { background: var(--pencil); }
+.chips { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { display: inline-flex; gap: 8px; align-items: center; font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--ink); }
+.chips li b { font-weight: 600; color: var(--accent); }
+form { margin-top: 24px; display: grid; gap: 18px; }
+.field { display: grid; gap: 6px; }
+label.lb, .field label, legend { font-size: .88rem; font-weight: 600; }
+input[type="text"] {
+  font: inherit; font-size: 1rem; color: var(--ink); background: var(--bg);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 11px 14px; width: 100%; min-height: 48px;
+}
+input[type="text"]:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: 8px; }
+.modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+.mode { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; cursor: pointer; background: var(--surface); }
+.mode:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.mode input { margin-top: 5px; accent-color: var(--accent); width: 18px; height: 18px; flex: none; }
+.mode:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+.mode span { display: grid; gap: 2px; min-width: 0; }
+.mode small { color: var(--ink-2); font-size: .85rem; line-height: 1.4; }
+.note { margin: 16px 0 0; font-size: .85rem; color: var(--ink-2); }
+
+.btn {
+  font: inherit; font-weight: 600; font-size: 1rem; cursor: pointer;
+  border-radius: 12px; padding: 12px 22px; min-height: 50px;
+  border: 1.5px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+  box-shadow: 0 3px 0 var(--accent-edge);
+}
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 1px 0 var(--accent-edge); }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.btn.ghost { background: transparent; color: var(--accent); box-shadow: none; }
+.btn:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+/* layar soal */
+.qhead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; }
+.qnum { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+.tag { font-size: .8rem; color: var(--ink-2); }
+.prog { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 4px; margin: 12px 0 20px; }
+.prog i { height: 8px; border-radius: 3px; background: var(--line); }
+.prog i.done { background: var(--accent); }
+.prog i.ok { background: var(--good); }
+.prog i.no { background: var(--bad); }
+.prog i.cur { outline: 2px solid var(--pencil); outline-offset: 2px; }
+.qtext { font-family: var(--font-body); font-weight: 500; font-size: clamp(1.1rem, 3.4vw, 1.3rem); line-height: 1.95; margin: 0; text-wrap: pretty; }
+.opts { display: grid; gap: 10px; margin-top: 18px; }
+.opt {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+  font: inherit; font-size: 1.2rem; color: var(--ink); background: var(--surface);
+  border: 1.5px solid var(--line); border-radius: 12px; padding: 9px 14px; min-height: 58px; cursor: pointer;
+}
+.opt:not(:disabled):hover { border-color: var(--accent); }
+.opt:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.opt:disabled { cursor: default; color: var(--ink); }
+.opt .ltr {
+  flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px;
+  border: 1.5px solid var(--line); background: var(--bg);
+  font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+}
+.opt .val { flex: 1; min-width: 0; }
+.opt .mark { flex: none; font-size: .78rem; font-weight: 600; }
+.opt.sel { border-color: var(--accent); background: var(--accent-soft); }
+.opt.sel .ltr { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.opt.ok { border-color: var(--good); background: var(--good-soft); }
+.opt.ok .ltr { background: var(--good); border-color: var(--good); color: var(--on-good); }
+.opt.ok .mark { color: var(--good); }
+.opt.no { border-color: var(--bad); background: var(--bad-soft); }
+.opt.no .ltr { background: var(--bad); border-color: var(--bad); color: var(--on-bad); }
+.opt.no .mark { color: var(--bad); }
+.opt.dim { opacity: .62; }
+
+.fb { margin-top: 20px; border-radius: 12px; padding: 14px 16px 16px; border: 1.5px solid; }
+.fb.ok { background: var(--good-soft); border-color: var(--good); }
+.fb.no { background: var(--bad-soft); border-color: var(--bad); }
+.fb h3 { font-size: 1.15rem; }
+.fb.ok h3 { color: var(--good); }
+.fb.no h3 { color: var(--bad); }
+.fb p { margin: 4px 0 0; }
+.fbt { margin-top: 10px !important; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.steps { margin: 6px 0 0; padding-left: 1.4em; display: grid; gap: 6px; line-height: 1.9; }
+
+/* layar hasil */
+.score { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin: 10px 0 6px; }
+.bigN { font-family: var(--font-display); font-weight: 600; font-size: clamp(3.4rem, 15vw, 4.8rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.bigN small { font-size: .4em; font-weight: 500; color: var(--ink-2); }
+.nilai { background: var(--pencil); color: var(--on-pencil); font-weight: 600; padding: 5px 14px; border-radius: 999px; }
+.msg { margin: 6px 0 0; max-width: 56ch; }
+h2.sec { font-size: 1.15rem; margin: 28px 0 10px; }
+.tb { display: grid; grid-template-columns: minmax(104px, 160px) 1fr auto; align-items: center; gap: 8px 12px; font-size: .92rem; }
+.track { height: 10px; border-radius: 5px; background: var(--bg); border: 1px solid var(--line); overflow: hidden; }
+.fill { height: 100%; background: var(--accent); }
+.cnt { font-variant-numeric: tabular-nums; font-weight: 600; }
+.copyMsg { margin-top: 10px; font-size: .88rem; color: var(--ink-2); }
+.copyMsg textarea { width: 100%; font: inherit; font-size: .9rem; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-top: 6px; }
+.revs { display: grid; gap: 10px; }
+.rev { border: 1.5px solid var(--line); border-radius: 12px; background: var(--surface); }
+.rev summary { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; cursor: pointer; list-style: none; line-height: 1.9; }
+.rev summary::-webkit-details-marker { display: none; }
+.rev summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 12px; }
+.st { flex: none; font-size: .78rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; line-height: 1.6; margin-top: .35em; }
+.rev.ok .st { background: var(--good-soft); color: var(--good); }
+.rev.no .st { background: var(--bad-soft); color: var(--bad); }
+.rq { min-width: 0; }
+.rb { border-top: 1px dashed var(--line); padding: 10px 14px 14px; }
+.rb p { margin: 4px 0; line-height: 1.9; }
+
+@media (max-width: 420px) {
+  .opt { font-size: 1.12rem; gap: 10px; padding: 8px 10px; }
+  .opt .mark { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+
+<div class="wrap">
+  <header class="bar">
+    <span class="brand">Kuis Pecahan · Set 3</span>
+    <span class="modeLabel" id="modeLabel"></span>
+  </header>
+  <main id="app" tabindex="-1"></main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const Q = [{"id": 1, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan biasa", "text": "Hasil dari [2/5] + [3/4] adalah ...", "options": ["[7/20]", "[5/9]", "[23/20]", "[17/20]"], "answer": 2, "steps": ["Samakan penyebutnya. KPK dari 5 dan 4 adalah 20.", "[2/5] = [8/20] dan [3/4] = [15/20].", "[8/20] + [15/20] = [23/20]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 2, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan biasa", "text": "Hasil dari [5/6] + [3/8] adalah ...", "options": ["[29/24]", "[4/7]", "[23/24]", "[35/24]"], "answer": 0, "steps": ["Samakan penyebutnya. KPK dari 6 dan 8 adalah 24.", "[5/6] = [20/24] dan [3/8] = [9/24].", "[20/24] + [9/24] = [29/24]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 3, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan biasa", "text": "Hasil dari [3/7] + [2/3] adalah ...", "options": ["[1/2]", "[17/21]", "[25/21]", "[23/21]"], "answer": 3, "steps": ["Samakan penyebutnya. KPK dari 7 dan 3 adalah 21.", "[3/7] = [9/21] dan [2/3] = [14/21].", "[9/21] + [14/21] = [23/21]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 4, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan biasa", "text": "Hasil dari [7/9] + [5/6] adalah ...", "options": ["[4/5]", "[29/18]", "[19/18]", "[35/18]"], "answer": 1, "steps": ["Samakan penyebutnya. KPK dari 9 dan 6 adalah 18.", "[7/9] = [14/18] dan [5/6] = [15/18].", "[14/18] + [15/18] = [29/18]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 5, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan biasa", "text": "Hasil dari [3/10] + [4/5] adalah ...", "options": ["[7/15]", "[11/10]", "[7/10]", "[13/10]"], "answer": 1, "steps": ["Samakan penyebutnya. KPK dari 10 dan 5 adalah 10.", "Pecahan [3/10] tetap, sedangkan [4/5] = [8/10].", "[3/10] + [8/10] = [11/10]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 6, "topic": "Penjumlahan", "tag": "Penjumlahan tiga pecahan", "text": "Hasil dari [1/2] + [2/3] + [3/4] adalah ...", "options": ["[2/3]", "[19/12]", "[25/12]", "[23/12]"], "answer": 3, "steps": ["Samakan penyebutnya. KPK dari 2, 3, dan 4 adalah 12.", "[1/2] = [6/12], [2/3] = [8/12], dan [3/4] = [9/12].", "[6/12] + [8/12] + [9/12] = [23/12]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 7, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan campuran", "text": "Hasil dari [1 2/7] + [3 4/7] adalah ...", "options": ["[4 6/7]", "[3 6/7]", "[4 2/7]", "[5 6/7]"], "answer": 0, "steps": ["Jumlahkan bilangan bulatnya: 1 + 3 = 4.", "Jumlahkan pecahannya: [2/7] + [4/7] = [6/7].", "Gabungkan: 4 + [6/7] = [4 6/7]."]}, {"id": 8, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan campuran", "text": "Hasil dari [2 1/4] + [1 2/3] adalah ...", "options": ["[3 5/12]", "[3 3/7]", "[3 11/12]", "[4 11/12]"], "answer": 2, "steps": ["Jumlahkan bilangan bulatnya: 2 + 1 = 3.", "Jumlahkan pecahannya: [1/4] + [2/3] = [3/12] + [8/12] = [11/12].", "Gabungkan: 3 + [11/12] = [3 11/12]."]}, {"id": 9, "topic": "Penjumlahan", "tag": "Penjumlahan pecahan campuran", "text": "Hasil dari [3 3/4] + [2 5/6] adalah ...", "options": ["[5 7/12]", "[6 1/6]", "[7 7/12]", "[6 7/12]"], "answer": 3, "steps": ["Jumlahkan bilangan bulatnya: 3 + 2 = 5.", "Jumlahkan pecahannya: [3/4] + [5/6] = [9/12] + [10/12] = [19/12] = [1 7/12].", "Gabungkan: 5 + [1 7/12] = [6 7/12]."]}, {"id": 10, "topic": "Pengurangan", "tag": "Pengurangan pecahan biasa", "text": "Hasil dari [11/12] − [3/8] adalah ...", "options": ["[5/12]", "[13/24]", "[2/3]", "[17/24]"], "answer": 1, "steps": ["Samakan penyebutnya. KPK dari 12 dan 8 adalah 24.", "[11/12] = [22/24] dan [3/8] = [9/24].", "[22/24] − [9/24] = [13/24]."]}, {"id": 11, "topic": "Pengurangan", "tag": "Pengurangan pecahan campuran", "text": "Hasil dari [6 1/3] − [2 3/4] adalah ...", "options": ["[3 5/12]", "[4 1/6]", "[3 7/12]", "[4 7/12]"], "answer": 2, "steps": ["Ubah ke pecahan biasa: [6 1/3] = [19/3] dan [2 3/4] = [11/4].", "Samakan penyebut (KPK 12): [19/3] = [76/12] dan [11/4] = [33/12].", "[76/12] − [33/12] = [43/12] = [3 7/12]."]}, {"id": 12, "topic": "Pengurangan", "tag": "Pengurangan pecahan campuran", "text": "Hasil dari [4 1/2] − [1 3/5] adalah ...", "options": ["[2 9/10]", "[2 1/10]", "[3 1/10]", "[3 9/10]"], "answer": 0, "steps": ["Ubah ke pecahan biasa: [4 1/2] = [9/2] dan [1 3/5] = [8/5].", "Samakan penyebut (KPK 10): [9/2] = [45/10] dan [8/5] = [16/10].", "[45/10] − [16/10] = [29/10] = [2 9/10]."]}, {"id": 13, "topic": "Pembagian", "tag": "Pembagian pecahan biasa", "text": "Hasil dari [4/9] ÷ [2/3] adalah ...", "options": ["[2/9]", "[8/27]", "[2/3]", "[1 1/2]"], "answer": 2, "steps": ["Kebalikan dari [2/3] adalah [3/2].", "[4/9] ÷ [2/3] = [4/9] × [3/2] = [12/18].", "Sederhanakan: [12/18] = [2/3]."]}, {"id": 14, "topic": "Pembagian", "tag": "Bilangan bulat dibagi pecahan", "text": "Hasil dari 8 ÷ [2/3] adalah ...", "options": ["[5 1/3]", "12", "[8 2/3]", "16"], "answer": 1, "steps": ["Kebalikan dari [2/3] adalah [3/2].", "8 ÷ [2/3] = 8 × [3/2] = [24/2].", "[24/2] = 12."]}, {"id": 15, "topic": "Pembagian", "tag": "Pecahan dibagi bilangan bulat", "text": "Hasil dari [5/6] ÷ 10 adalah ...", "options": ["[1/60]", "[1/6]", "[8 1/3]", "[1/12]"], "answer": 3, "steps": ["Kebalikan dari 10 adalah [1/10].", "[5/6] ÷ 10 = [5/6] × [1/10] = [5/60].", "Sederhanakan: [5/60] = [1/12]."]}, {"id": 16, "topic": "Pembagian", "tag": "Pembagian pecahan campuran", "text": "Hasil dari [1 1/2] ÷ [3/4] adalah ...", "options": ["2", "[1/2]", "[1 1/8]", "3"], "answer": 0, "steps": ["Ubah ke pecahan biasa: [1 1/2] = [3/2].", "[3/2] ÷ [3/4] = [3/2] × [4/3] = [12/6].", "Sederhanakan: [12/6] = 2."]}, {"id": 17, "topic": "Pembagian", "tag": "Pembagian pecahan campuran", "text": "Hasil dari [3 3/5] ÷ [1 1/5] adalah ...", "options": ["2", "3", "4", "[4 8/25]"], "answer": 1, "steps": ["Ubah ke pecahan biasa: [3 3/5] = [18/5] dan [1 1/5] = [6/5].", "[18/5] ÷ [6/5] = [18/5] × [5/6] = [90/30].", "Sederhanakan: [90/30] = 3."]}, {"id": 18, "topic": "Operasi gabungan", "tag": "Tambah dan kurang pecahan biasa", "text": "Hasil dari [3/4] + [1/2] − [2/3] adalah ...", "options": ["[5/12]", "[11/12]", "[1 5/12]", "[7/12]"], "answer": 3, "steps": ["Samakan penyebut. KPK dari 4, 2, dan 3 adalah 12.", "[3/4] = [9/12], [1/2] = [6/12], dan [2/3] = [8/12].", "[9/12] + [6/12] − [8/12] = [15/12] − [8/12] = [7/12]."]}, {"id": 19, "topic": "Soal cerita", "tag": "Soal cerita: penjumlahan", "text": "Ibu membeli [2/3] kg apel dan [3/4] kg jeruk. Berat buah yang dibeli Ibu seluruhnya adalah ...", "options": ["[17/12] kg", "[5/7] kg", "[11/12] kg", "[19/12] kg"], "answer": 0, "steps": ["Jumlahkan berat apel dan berat jeruk.", "KPK dari 3 dan 4 adalah 12. [2/3] = [8/12] dan [3/4] = [9/12].", "[8/12] + [9/12] = [17/12]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 20, "topic": "Soal cerita", "tag": "Soal cerita: penjumlahan", "text": "Andi berlari [3/5] km pada pagi hari dan [5/6] km pada sore hari. Jarak lari Andi seluruhnya adalah ...", "options": ["[8/11] km", "[7/6] km", "[43/30] km", "[37/30] km"], "answer": 2, "steps": ["Jumlahkan jarak lari pagi dan sore hari.", "KPK dari 5 dan 6 adalah 30. [3/5] = [18/30] dan [5/6] = [25/30].", "[18/30] + [25/30] = [43/30]. Hasil penjumlahan ini tidak perlu diubah menjadi pecahan campuran."]}, {"id": 21, "topic": "Soal cerita", "tag": "Soal cerita: penjumlahan", "text": "Pak Doni memakai [1/3] kaleng cat untuk pintu dan [3/5] kaleng cat untuk jendela. Cat yang dipakai seluruhnya adalah ...", "options": ["[4/15] kaleng", "[14/15] kaleng", "[1/2] kaleng", "[19/15] kaleng"], "answer": 1, "steps": ["Jumlahkan cat untuk pintu dan cat untuk jendela.", "KPK dari 3 dan 5 adalah 15. [1/3] = [5/15] dan [3/5] = [9/15].", "[5/15] + [9/15] = [14/15]."]}, {"id": 22, "topic": "Soal cerita", "tag": "Soal cerita: pengurangan", "text": "Sehelai pita panjangnya [5/6] m. Pita itu dipotong sepanjang [3/10] m. Sisa pita adalah ...", "options": ["[8/15] m", "[7/15] m", "[1/2] m", "[11/15] m"], "answer": 0, "steps": ["Sisa pita diperoleh dengan mengurangi panjang semula dengan panjang yang dipotong.", "KPK dari 6 dan 10 adalah 30. [5/6] = [25/30] dan [3/10] = [9/30].", "[25/30] − [9/30] = [16/30] = [8/15]."]}, {"id": 23, "topic": "Soal cerita", "tag": "Soal cerita: pembagian", "text": "Ibu mempunyai [3/5] liter sirup. Sirup itu dibagi sama banyak ke dalam 4 gelas. Isi setiap gelas adalah ...", "options": ["[1/5] liter", "[1/3] liter", "[2 2/5] liter", "[3/20] liter"], "answer": 3, "steps": ["Isi tiap gelas diperoleh dengan membagi [3/5] liter dengan 4.", "Kebalikan dari 4 adalah [1/4].", "[3/5] ÷ 4 = [3/5] × [1/4] = [3/20]. Pecahan [3/20] sudah paling sederhana."]}, {"id": 24, "topic": "Soal cerita", "tag": "Soal cerita: pembagian", "text": "Pak Budi mempunyai 10 kg gula pasir. Gula itu dimasukkan ke dalam kantong, setiap kantong berisi [2/5] kg. Banyak kantong yang diperlukan adalah ...", "options": ["4 kantong", "25 kantong", "20 kantong", "50 kantong"], "answer": 1, "steps": ["Banyak kantong sama dengan 10 dibagi [2/5].", "Kebalikan dari [2/5] adalah [5/2].", "10 ÷ [2/5] = 10 × [5/2] = [50/2] = 25."]}, {"id": 25, "topic": "Soal cerita", "tag": "Soal cerita: tambah dan kurang", "text": "Ibu mempunyai [1 1/2] kg tepung. Ibu membeli [2 1/4] kg tepung lagi, lalu memakai [1 3/4] kg untuk membuat kue. Sisa tepung Ibu adalah ...", "options": ["[1 1/2] kg", "[2 1/2] kg", "2 kg", "3 kg"], "answer": 2, "steps": ["Tepung bertambah karena membeli, lalu berkurang karena dipakai.", "Ubah ke pecahan biasa (penyebut 4): [1 1/2] = [6/4], [2 1/4] = [9/4], dan [1 3/4] = [7/4].", "[6/4] + [9/4] − [7/4] = [15/4] − [7/4] = [8/4] = 2."]}];
+  const L = ['A', 'B', 'C', 'D'];
+  const app = document.getElementById('app');
+  const modeLabel = document.getElementById('modeLabel');
+  const S = { screen: 'start', mode: 'practice', name: '', order: [], i: 0, ans: {}, locked: {} };
+  const TOPICS = [];
+  Q.forEach(q => { if (TOPICS.indexOf(q.topic) < 0) TOPICS.push(q.topic); });
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // [3/4] jadi pecahan bersusun, [2 1/2] jadi pecahan campuran
+  const rich = s => esc(s).replace(/\[(?:(\d+) )?(\d+)\/(\d+)\]/g, (m, w, n, d) => {
+    const label = w ? w + ' dan ' + n + '/' + d : n + '/' + d;
+    return '<span class="mn" role="img" aria-label="' + label + '">' +
+      (w ? '<span class="w">' + w + '</span>' : '') +
+      '<span class="fr"><span class="n">' + n + '</span><span class="d">' + d + '</span></span></span>';
+  });
+
+  function calc() {
+    const n = S.order.length;
+    let score = 0;
+    const bt = {};
+    S.order.forEach(k => {
+      const q = Q[k], ok = S.ans[k] === q.answer;
+      if (ok) score++;
+      const b = bt[q.topic] || (bt[q.topic] = { t: 0, c: 0 });
+      b.t++;
+      if (ok) b.c++;
+    });
+    return { n: n, score: score, bt: bt, nilai: Math.round(score / n * 100) };
+  }
+  const wrongList = () => S.order.filter(k => S.ans[k] !== Q[k].answer);
+
+  /* ---------- tampilan ---------- */
+  function viewStart() {
+    const chips = TOPICS.map(t => '<li>' + esc(t) + '<b>' + Q.filter(q => q.topic === t).length + '</b></li>').join('');
+    return '<section class="card start">' +
+      '<div class="demo" aria-hidden="true">' +
+        '<span class="mn"><span class="fr"><span class="n">3</span><span class="d">4</span></span></span>' +
+        '<span class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>' +
+      '</div>' +
+      '<p class="eyebrow">Latihan gaya TKA SD · Matematika</p>' +
+      '<h1>Kuis Pecahan Set 3</h1>' +
+      '<p class="lead">' + Q.length + ' soal pilihan ganda tentang pecahan biasa dan pecahan campuran: penjumlahan, pengurangan, dan pembagian, termasuk soal cerita.</p>' +
+      '<ul class="chips">' + chips + '</ul>' +
+      '<form id="startForm" novalidate>' +
+        '<div class="field"><label for="nama">Nama (boleh dikosongkan)</label>' +
+        '<input id="nama" name="nama" type="text" maxlength="30" autocomplete="off" value="' + esc(S.name) + '"></div>' +
+        '<fieldset class="modes"><legend>Cara mengerjakan</legend>' +
+          '<label class="mode"><input type="radio" name="mode" value="practice"' + (S.mode === 'practice' ? ' checked' : '') + '>' +
+            '<span><b>Latihan</b><small>Pembahasan muncul setelah kamu menjawab tiap soal.</small></span></label>' +
+          '<label class="mode"><input type="radio" name="mode" value="exam"' + (S.mode === 'exam' ? ' checked' : '') + '>' +
+            '<span><b>Ujian</b><small>Jawaban boleh diubah. Pembahasan muncul di akhir.</small></span></label>' +
+        '</fieldset>' +
+        '<div><button class="btn" type="submit">Mulai kuis</button></div>' +
+      '</form>' +
+      '<p class="note">Siapkan kertas untuk mencoret-coret. Tidak ada batas waktu. Pada soal penjumlahan, hasil yang lebih dari 1 boleh tetap berbentuk pecahan biasa dan tidak perlu diubah ke pecahan campuran.</p>' +
+    '</section>';
+  }
+
+  function stepsHtml(q) {
+    return '<ol class="steps">' + q.steps.map(s => '<li>' + rich(s) + '</li>').join('') + '</ol>';
+  }
+
+  function viewQuestion() {
+    const qi = S.order[S.i], q = Q[qi], n = S.order.length;
+    const a = S.ans[qi], practice = S.mode === 'practice', locked = !!S.locked[qi];
+    const seg = S.order.map((k, j) => {
+      let c = '';
+      if (S.ans[k] !== undefined) c = practice ? (S.ans[k] === Q[k].answer ? 'ok' : 'no') : 'done';
+      if (j === S.i) c += ' cur';
+      return '<i class="' + c + '"></i>';
+    }).join('');
+    const opts = q.options.map((o, k) => {
+      let cls = 'opt', mark = '';
+      if (practice && locked) {
+        if (k === q.answer) { cls += ' ok'; mark = 'Jawaban benar'; }
+        else if (k === a) { cls += ' no'; mark = 'Jawabanmu'; }
+        else cls += ' dim';
+      } else if (a === k) cls += ' sel';
+      return '<button type="button" class="' + cls + '" role="radio" aria-checked="' + (a === k) + '" data-act="pick" data-k="' + k + '"' +
+        (practice && locked ? ' disabled' : '') + '><span class="ltr">' + L[k] + '</span><span class="val">' + rich(o) + '</span>' +
+        (mark ? '<span class="mark">' + mark + '</span>' : '') + '</button>';
+    }).join('');
+    let fb = '';
+    if (practice && locked) {
+      const right = a === q.answer;
+      fb = '<div class="fb ' + (right ? 'ok' : 'no') + '">' +
+        '<h3 id="fbh" tabindex="-1">' + (right ? 'Benar!' : 'Belum tepat') + '</h3>' +
+        (right ? '' : '<p>Jawaban yang benar adalah <b>' + L[q.answer] + '</b>.</p>') +
+        '<p class="fbt">Pembahasan</p>' + stepsHtml(q) + '</div>';
+    }
+    const last = S.i === n - 1;
+    let nextLabel, showNext = true;
+    if (practice) { nextLabel = last ? 'Lihat hasil' : 'Soal berikutnya'; showNext = locked; }
+    else nextLabel = last ? 'Selesai dan lihat hasil' : 'Lanjut';
+    const nextDis = !practice && a === undefined;
+    return '<section class="card">' +
+      '<div class="qhead"><span class="qnum" id="qh" tabindex="-1">Soal ' + (S.i + 1) + ' dari ' + n + '</span><span class="tag">' + esc(q.tag) + '</span></div>' +
+      '<div class="prog" style="--n:' + n + '" aria-hidden="true">' + seg + '</div>' +
+      '<p class="qtext">' + rich(q.text) + '</p>' +
+      '<div class="opts" role="radiogroup" aria-label="Pilihan jawaban">' + opts + '</div>' +
+      fb +
+      '<div class="actions">' +
+        (!practice && S.i > 0 ? '<button type="button" class="btn ghost" data-act="prev">Sebelumnya</button>' : '') +
+        (showNext ? '<button type="button" class="btn" data-act="next"' + (nextDis ? ' disabled' : '') + '>' + nextLabel + '</button>' : '') +
+      '</div>' +
+    '</section>';
+  }
+
+  function viewResult() {
+    const r = calc(), pct = r.score / r.n, wrong = wrongList();
+    const msg = pct >= .9 ? 'Hebat! Hampir semua jawabanmu benar.'
+      : pct >= .7 ? 'Bagus. Baca pembahasan soal yang salah supaya makin mantap.'
+      : pct >= .5 ? 'Sudah cukup baik. Pelajari pembahasan, lalu coba lagi.'
+      : 'Jangan menyerah. Baca pembahasan tiap soal, lalu ulangi kuisnya.';
+    const rows = TOPICS.filter(t => r.bt[t]).map(t => {
+      const b = r.bt[t];
+      return '<span>' + esc(t) + '</span><span class="track" aria-hidden="true"><span class="fill" style="display:block;width:' + Math.round(b.c / b.t * 100) + '%"></span></span><span class="cnt">' + b.c + '/' + b.t + '</span>';
+    }).join('');
+    const revs = S.order.map((k, j) => {
+      const q = Q[k], a = S.ans[k], ok = a === q.answer;
+      return '<details class="rev ' + (ok ? 'ok' : 'no') + '"' + (!ok && S.mode === 'exam' ? ' open' : '') + '>' +
+        '<summary><span class="st">' + (ok ? 'Benar' : 'Salah') + '</span><span class="rq"><b>' + (j + 1) + '.</b> ' + rich(q.text) + '</span></summary>' +
+        '<div class="rb"><p>Jawabanmu: ' + (a === undefined ? '(kosong)' : '<b>' + L[a] + '.</b> ' + rich(q.options[a])) + '</p>' +
+        '<p>Jawaban benar: <b>' + L[q.answer] + '.</b> ' + rich(q.options[q.answer]) + '</p>' +
+        '<p class="fbt">Pembahasan</p>' + stepsHtml(q) + '</div></details>';
+    }).join('');
+    const title = S.order.length < Q.length ? 'Hasil ulangan soal yang salah' : 'Hasil kuis';
+    return '<section class="card">' +
+      '<p class="eyebrow">' + title + (S.name ? ' · ' + esc(S.name) : '') + '</p>' +
+      '<h1 id="rh" tabindex="-1">Skor kamu ' + r.score + ' dari ' + r.n + '</h1>' +
+      '<div class="score"><span class="bigN">' + r.score + '<small>/' + r.n + '</small></span><span class="nilai">Nilai ' + r.nilai + '</span></div>' +
+      '<p class="msg">' + msg + '</p>' +
+      '<h2 class="sec">Per topik</h2><div class="tb">' + rows + '</div>' +
+      '<div class="actions">' +
+        (wrong.length ? '<button type="button" class="btn" data-act="wrong">Ulangi ' + wrong.length + ' soal yang salah</button>' : '') +
+        '<button type="button" class="btn' + (wrong.length ? ' ghost' : '') + '" data-act="again">Ulangi semua soal</button>' +
+        '<button type="button" class="btn ghost" data-act="copy">Salin hasil</button>' +
+        '<button type="button" class="btn ghost" data-act="home">Kembali ke awal</button>' +
+      '</div>' +
+      '<div class="copyMsg" id="copyMsg" aria-live="polite"></div>' +
+      '<h2 class="sec">Pembahasan semua soal</h2><div class="revs">' + revs + '</div>' +
+    '</section>';
+  }
+
+  function render() {
+    modeLabel.textContent = S.screen === 'quiz' ? (S.mode === 'practice' ? 'Mode latihan' : 'Mode ujian') : '';
+    app.innerHTML = S.screen === 'start' ? viewStart() : S.screen === 'quiz' ? viewQuestion() : viewResult();
+  }
+  function toTop(id) {
+    window.scrollTo(0, 0);
+    const h = document.getElementById(id);
+    if (h) h.focus({ preventScroll: true });
+  }
+
+  /* ---------- aksi ---------- */
+  function begin(order) {
+    S.order = order; S.i = 0; S.ans = {}; S.locked = {}; S.screen = 'quiz';
+    render(); toTop('qh');
+  }
+  function pick(k) {
+    const qi = S.order[S.i], practice = S.mode === 'practice';
+    if (practice && S.locked[qi]) return;
+    S.ans[qi] = k;
+    if (practice) S.locked[qi] = true;
+    render();
+    if (practice) {
+      const h = document.getElementById('fbh');
+      if (h) { h.focus({ preventScroll: true }); h.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' }); }
+    } else {
+      const b = app.querySelector('.opt[data-k="' + k + '"]');
+      if (b) b.focus({ preventScroll: true });
+    }
+  }
+  function next() {
+    const qi = S.order[S.i];
+    if (S.ans[qi] === undefined) return;
+    if (S.i < S.order.length - 1) { S.i++; render(); toTop('qh'); }
+    else { S.screen = 'result'; render(); toTop('rh'); }
+  }
+  function prev() { if (S.i > 0) { S.i--; render(); toTop('qh'); } }
+
+  function copyResult() {
+    const r = calc();
+    const text = 'Kuis Pecahan SD Set 3' + (S.name ? ' - ' + S.name : '') + '\nSkor ' + r.score + ' dari ' + r.n + '\nNilai ' + r.nilai;
+    const box = document.getElementById('copyMsg');
+    const fail = () => {
+      box.innerHTML = '<label for="copyBox">Salin teks ini secara manual:</label><textarea id="copyBox" rows="3" readonly>' + esc(text) + '</textarea>';
+      const t = document.getElementById('copyBox'); t.focus(); t.select();
+    };
+    try {
+      navigator.clipboard.writeText(text).then(() => { box.textContent = 'Hasil disalin.'; }, fail);
+    } catch (e) { fail(); }
+  }
+
+  app.addEventListener('click', e => {
+    const el = e.target.closest('[data-act]');
+    if (!el || el.disabled) return;
+    const act = el.dataset.act;
+    if (act === 'pick') pick(+el.dataset.k);
+    else if (act === 'next') next();
+    else if (act === 'prev') prev();
+    else if (act === 'again') begin(Q.map((_, k) => k));
+    else if (act === 'wrong') begin(wrongList());
+    else if (act === 'copy') copyResult();
+    else if (act === 'home') { S.screen = 'start'; render(); window.scrollTo(0, 0); }
+  });
+  app.addEventListener('submit', e => {
+    if (e.target.id !== 'startForm') return;
+    e.preventDefault();
+    const f = e.target;
+    S.name = f.nama.value.trim();
+    S.mode = f.mode.value === 'exam' ? 'exam' : 'practice';
+    begin(Q.map((_, k) => k));
+  });
+  document.addEventListener('keydown', e => {
+    if (S.screen !== 'quiz' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.target.matches && e.target.matches('input, textarea')) return;
+    const k = ['a', 'b', 'c', 'd', '1', '2', '3', '4'].indexOf(e.key.toLowerCase());
+    if (k > -1) { pick(k % 4); return; }
+    if (e.key === 'Enter' && !(e.target.closest && e.target.closest('button, a, summary'))) {
+      const b = app.querySelector('[data-act="next"]');
+      if (b && !b.disabled) next();
+    }
+  });
+
+  render();
+})();
+</script>
+
+</body></html>
